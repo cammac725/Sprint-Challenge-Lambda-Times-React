@@ -1,7 +1,17 @@
 import React from 'react';
 
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
+// =======================
+//   Component Styles
+// =======================
+
+// =======================
+//     Components 
+// =======================
+
 const Tab = props => {
-  // console.log('tab', props)
   return (
     <div
       className={props.tab === props.selectedTab ? 'tab active-tab' : 'tab'}
@@ -13,6 +23,12 @@ const Tab = props => {
   );
 };
 
-// Make sure you include PropTypes on your props.
+// ======================
+//    Prop Types
+// ======================
+
+Tab.propTypes = {
+  tab: PropTypes.string
+}
 
 export default Tab;

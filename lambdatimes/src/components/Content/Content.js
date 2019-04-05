@@ -2,8 +2,23 @@ import React, { Component } from 'react';
 
 import Tabs from './Tabs';
 import Cards from './Cards';
+import styled from 'styled-components';
 
 import { tabData, cardData } from '../../data';
+
+// =======================
+//   Component Styles
+// =======================
+
+const ContentDiv = styled.div`
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+`;
+
+// =======================
+//     Components 
+// =======================
 
 export default class Content extends Component {
   constructor(props) {
@@ -40,13 +55,13 @@ export default class Content extends Component {
 
   render() {
     return (
-      <div className="content-container">
+      <ContentDiv>
         <Tabs
           tabs={this.state.tabs}
           selectedTab={this.state.selected}
           selectTabHandler={this.selectTabHandler} />
         <Cards cards={this.filterCards()} />
-      </div>
+      </ContentDiv>
     );
   }
 }
